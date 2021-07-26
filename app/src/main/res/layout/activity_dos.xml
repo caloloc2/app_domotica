@@ -8,7 +8,7 @@
     tools:context=".DosActivity">
 
     <EditText
-        android:id="@+id/editTextNumber6"
+        android:id="@+id/NivelSet"
         android:layout_width="146dp"
         android:layout_height="46dp"
         android:layout_marginTop="10dp"
@@ -16,7 +16,7 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView19"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintTop_toBottomOf="@+id/NivelAct" />
 
     <TextView
         android:id="@+id/textView19"
@@ -25,9 +25,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="25dp"
-        android:text="TEMPERATURA SET"
+        android:text="NIVEL SET"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintTop_toBottomOf="@+id/NivelAct" />
 
     <TextView
         android:id="@+id/textView20"
@@ -40,10 +40,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber5" />
+        app:layout_constraintTop_toBottomOf="@+id/TempSet" />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/NivelAct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -92,7 +92,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/TempAct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="35°"
@@ -109,10 +109,10 @@
         android:layout_marginTop="25dp"
         android:text="TEMPERATURA SET"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/TempAct" />
 
     <EditText
-        android:id="@+id/editTextNumber5"
+        android:id="@+id/TempSet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -120,5 +120,14 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/TempAct" />
+
+    <Button
+        android:id="@+id/btn_actualizar_nt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="ACTUALIZAR VALORES"
+        app:layout_constraintBottom_toTopOf="@+id/btn_regresar_dos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

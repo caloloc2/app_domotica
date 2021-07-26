@@ -8,12 +8,12 @@
     tools:context=".TresActivity">
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/Luz2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LUZ 2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+        app:layout_constraintTop_toBottomOf="@+id/Luz1" />
 
     <Button
         android:id="@+id/btn_regresar_tres"
@@ -36,7 +36,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/Luz1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -45,40 +45,40 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/Luz3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LUZ 3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+        app:layout_constraintTop_toBottomOf="@+id/Luz2" />
 
     <CheckBox
-        android:id="@+id/checkBox4"
+        android:id="@+id/Luz4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LUZ 4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
+        app:layout_constraintTop_toBottomOf="@+id/Luz3" />
 
     <CheckBox
-        android:id="@+id/checkBox5"
+        android:id="@+id/Rele1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="RELE 1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox4" />
+        app:layout_constraintTop_toBottomOf="@+id/Luz4" />
 
     <CheckBox
-        android:id="@+id/checkBox6"
+        android:id="@+id/Rele2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RELE 2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox5" />
+        app:layout_constraintTop_toBottomOf="@+id/Rele1" />
 
     <CheckBox
-        android:id="@+id/checkBox7"
+        android:id="@+id/Buzzer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -87,37 +87,37 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <CheckBox
-        android:id="@+id/checkBox8"
+        android:id="@+id/Entrada1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="ENTRADA 1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox7" />
+        app:layout_constraintTop_toBottomOf="@+id/Buzzer" />
 
     <CheckBox
-        android:id="@+id/checkBox9"
+        android:id="@+id/Entrada2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ENTRADA 2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox8" />
+        app:layout_constraintTop_toBottomOf="@+id/Entrada1" />
 
     <CheckBox
-        android:id="@+id/checkBox10"
+        android:id="@+id/Entrada3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ENTRADA 3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox9" />
+        app:layout_constraintTop_toBottomOf="@+id/Entrada2" />
 
     <CheckBox
-        android:id="@+id/checkBox11"
+        android:id="@+id/Entrada4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ENTRADA 4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox10" />
+        app:layout_constraintTop_toBottomOf="@+id/Entrada3" />
 
     <TextView
         android:id="@+id/textView9"
@@ -126,10 +126,10 @@
         android:layout_marginTop="25dp"
         android:text="POTENCIOMETRO"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox11" />
+        app:layout_constraintTop_toBottomOf="@+id/Entrada4" />
 
     <EditText
-        android:id="@+id/editTextNumber3"
+        android:id="@+id/Potenciometro"
         android:layout_width="134dp"
         android:layout_height="46dp"
         android:layout_marginTop="15dp"
