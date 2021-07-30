@@ -10,6 +10,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,9 +22,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class DosActivity extends AppCompatActivity {
     Button btn_regresar_dos, btn_actualizar;
     TextView NivelAct, NivelSet, TempAct, TempSet;
+
+    private LineChart grafica;
+    ArrayList<Entry> yvalues = new ArrayList<>();
+    int x = 0;
 
     //Instancia a la base de datos
     FirebaseDatabase fdb = FirebaseDatabase.getInstance();
@@ -32,6 +43,11 @@ public class DosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dos);
 
         FirebaseApp.initializeApp(this);
+
+        grafica = (LineChart)findViewById(R.id.chartLineaTemp);
+
+        yvalues.add(new Entry(x, 0));
+        x+=1;
 
         NivelAct = (TextView)findViewById(R.id.NivelAct);
         NivelSet = (TextView)findViewById(R.id.NivelSet);
@@ -83,6 +99,10 @@ public class DosActivity extends AppCompatActivity {
 
                 NivelSet.setText(nivel_set);
                 TempSet.setText(temp_set);
+
+                yvalues.add(new Entry(x, Float.parseFloat(temp_actual)));
+                x+=1;
+                Graficar();
             }
             @Override
             public void onCancelled(DatabaseError error){
@@ -90,5 +110,20 @@ public class DosActivity extends AppCompatActivity {
             }
 
         });
+    }
+
+    void Graficar(){
+        grafica.clear();
+        grafica.setDragEnabled(true);
+        grafica.setScaleEnabled(false);
+
+        LineDataSet set1 = new LineDataSet(yvalues, "Valores Temp");
+        set1.setFillAlpha(110);
+
+        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+        dataSets.add(set1);
+
+        LineData data = new LineData(dataSets);
+        grafica.setData(data);
     }
 }

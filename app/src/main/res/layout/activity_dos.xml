@@ -7,6 +7,14 @@
     android:padding="20dp"
     tools:context=".DosActivity">
 
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chartLineaTemp"
+        android:layout_width="0dp"
+        android:layout_height="158dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
     <EditText
         android:id="@+id/NivelSet"
         android:layout_width="146dp"
@@ -59,14 +67,14 @@
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="5dp"
         android:text="TEMPERATURA"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/chartLineaTemp" />
 
     <TextView
         android:id="@+id/textView11"
