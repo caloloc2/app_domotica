@@ -10,6 +10,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.github.mikephil.charting.listener.OnChartGestureListener;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,9 +24,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class UnoActivity extends AppCompatActivity {
     Button btn_regresar_uno, btn_actualizar;
     TextView RpmActual, RpmSet, AnguloAct, AnguloSet;
+
+    private LineChart grafica;
+    ArrayList<Entry> yvalues = new ArrayList<>();
+    int x = 0;
 
     //Instancia a la base de datos
     FirebaseDatabase fdb = FirebaseDatabase.getInstance();
@@ -31,6 +44,12 @@ public class UnoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_uno);
         FirebaseApp.initializeApp(this);
+
+
+        grafica = (LineChart)findViewById(R.id.chartLinea);
+
+        yvalues.add(new Entry(x, 0));
+        x+=1;
 
         RpmActual = (TextView)findViewById(R.id.RpmActual);
         RpmSet = (TextView)findViewById(R.id.RpmSet);
@@ -86,6 +105,10 @@ public class UnoActivity extends AppCompatActivity {
                 RpmSet.setText(rpm_set);
                 AnguloSet.setText(angulo_set);
 
+                yvalues.add(new Entry(x, Float.parseFloat(rpm_actual)));
+                x+=1;
+                Graficar();
+
             }
             @Override
             public void onCancelled(DatabaseError error){
@@ -93,5 +116,20 @@ public class UnoActivity extends AppCompatActivity {
             }
 
         });
+    }
+
+    void Graficar(){
+        grafica.clear();
+        grafica.setDragEnabled(true);
+        grafica.setScaleEnabled(false);
+
+        LineDataSet set1 = new LineDataSet(yvalues, "Valores RPM");
+        set1.setFillAlpha(110);
+
+        ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+        dataSets.add(set1);
+
+        LineData data = new LineData(dataSets);
+        grafica.setData(data);
     }
 }
