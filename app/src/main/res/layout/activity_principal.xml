@@ -9,12 +9,13 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="167dp"
-        android:layout_height="161dp"
+        android:layout_width="283dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/imagen" />
+        app:srcCompat="@drawable/espe" />
 
     <Button
         android:id="@+id/btn_uno"
