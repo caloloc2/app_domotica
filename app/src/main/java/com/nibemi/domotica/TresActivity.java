@@ -137,50 +137,6 @@ public class TresActivity extends AppCompatActivity {
             }
         });
 
-        Entrada1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked){
-                    IOSetValue("Entrada1", 1);
-                }else{
-                    IOSetValue("Entrada1", 0);
-                }
-            }
-        });
-
-        Entrada2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked){
-                    IOSetValue("Entrada2", 1);
-                }else{
-                    IOSetValue("Entrada2", 0);
-                }
-            }
-        });
-
-        Entrada3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked){
-                    IOSetValue("Entrada3", 1);
-                }else{
-                    IOSetValue("Entrada3", 0);
-                }
-            }
-        });
-
-        Entrada4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked){
-                    IOSetValue("Entrada4", 1);
-                }else{
-                    IOSetValue("Entrada4", 0);
-                }
-            }
-        });
-
         myRef.addValueEventListener(new ValueEventListener() {
 
             @Override

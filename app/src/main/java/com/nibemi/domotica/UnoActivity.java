@@ -33,6 +33,7 @@ public class UnoActivity extends AppCompatActivity {
     private LineChart grafica;
     ArrayList<Entry> yvalues = new ArrayList<>();
     int x = 0;
+    int primera = 0;
 
     //Instancia a la base de datos
     FirebaseDatabase fdb = FirebaseDatabase.getInstance();
@@ -102,8 +103,11 @@ public class UnoActivity extends AppCompatActivity {
                 RpmActual.setText("RPM "+rpm_actual);
                 AnguloAct.setText("Angulo "+angulo_actual+ " °");
 
-                RpmSet.setText(rpm_set);
-                AnguloSet.setText(angulo_set);
+                if (primera==0){
+                    RpmSet.setText(rpm_set);
+                    AnguloSet.setText(angulo_set);
+                    primera+=1;
+                }
 
                 yvalues.add(new Entry(x, Float.parseFloat(rpm_actual)));
                 x+=1;

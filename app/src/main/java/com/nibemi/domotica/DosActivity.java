@@ -31,6 +31,7 @@ public class DosActivity extends AppCompatActivity {
     private LineChart grafica;
     ArrayList<Entry> yvalues = new ArrayList<>();
     int x = 0;
+    int primera = 0;
 
     //Instancia a la base de datos
     FirebaseDatabase fdb = FirebaseDatabase.getInstance();
@@ -97,8 +98,11 @@ public class DosActivity extends AppCompatActivity {
                 NivelAct.setText(nivel_actual+" %");
                 TempAct.setText(temp_actual+ " °");
 
-                NivelSet.setText(nivel_set);
-                TempSet.setText(temp_set);
+                if (primera == 0){
+                    NivelSet.setText(nivel_set);
+                    TempSet.setText(temp_set);
+                    primera += 1;
+                }
 
                 yvalues.add(new Entry(x, Float.parseFloat(temp_actual)));
                 x+=1;
