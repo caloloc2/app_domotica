@@ -1,6 +1,7 @@
 package com.nibemi.domotica;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,8 +20,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class TresActivity extends AppCompatActivity {
     Button btn_regresar_tres;
-    CheckBox Luz1, Luz2, Luz3, Luz4, Rele1, Rele2, Entrada1, Entrada2, Entrada3, Entrada4, Buzzer;
-    TextView Potenciometro;
+    CheckBox Luz1, Luz2, Luz3, Luz4, Rele1, Rele2, Buzzer;
+    TextView Entrada1, Entrada2, Entrada3, Entrada4, Potenciometro;
     //Instancia a la base de datos
     FirebaseDatabase fdb = FirebaseDatabase.getInstance();
     //apuntamos al nodo que queremos leer
@@ -39,10 +40,10 @@ public class TresActivity extends AppCompatActivity {
         Rele1 = (CheckBox)findViewById(R.id.Rele1);
         Rele2 = (CheckBox)findViewById(R.id.Rele2);
 
-        Entrada1 = (CheckBox)findViewById(R.id.Entrada1);
-        Entrada2 = (CheckBox)findViewById(R.id.Entrada2);
-        Entrada3 = (CheckBox)findViewById(R.id.Entrada3);
-        Entrada4 = (CheckBox)findViewById(R.id.Entrada4);
+        Entrada1 = (TextView) findViewById(R.id.Entrada1);
+        Entrada2 = (TextView)findViewById(R.id.Entrada2);
+        Entrada3 = (TextView)findViewById(R.id.Entrada3);
+        Entrada4 = (TextView)findViewById(R.id.Entrada4);
 
         Buzzer = (CheckBox)findViewById(R.id.Buzzer);
 
@@ -199,27 +200,27 @@ public class TresActivity extends AppCompatActivity {
                 String val_entrada4 = dataSnapshot.child("Entrada4").getValue().toString();
 
                 if (val_entrada1.equals("1")){
-                    Entrada1.setChecked(true);
+                    Entrada1.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.encendido));
                 }else{
-                    Entrada1.setChecked(false);
+                    Entrada1.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.apagado));
                 }
 
                 if (val_entrada2.equals("1")){
-                    Entrada2.setChecked(true);
+                    Entrada2.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.encendido));
                 }else{
-                    Entrada2.setChecked(false);
+                    Entrada2.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.apagado));
                 }
 
                 if (val_entrada3.equals("1")){
-                    Entrada3.setChecked(true);
+                    Entrada3.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.encendido));
                 }else{
-                    Entrada3.setChecked(false);
+                    Entrada3.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.apagado));
                 }
 
                 if (val_entrada4.equals("1")){
-                    Entrada4.setChecked(true);
+                    Entrada4.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.encendido));
                 }else{
-                    Entrada4.setChecked(false);
+                    Entrada4.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.apagado));
                 }
 
                 String val_potenciometro = dataSnapshot.child("Potenciometro").getValue().toString();
